@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <link href="https://fonts.googleapis.com/css?family=Raleway:100,300" rel="stylesheet">
+	        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i" rel="stylesheet">
+            <link rel="stylesheet" href="style.css">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <script src="http://d3js.org/d3.v4.min.js"> </script>     
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Baby Names</title>
+
+		<style>
+			/* body {
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+			}
+			h1 {
+				text-align: center;
+				width: 1500px;
+				font-weight: lighter;
+            }
+            p{
+                text-align: left;
+                width: 1300px;
+                size: 10pt;
+            }
+			.node {
+			  cursor: pointer;
+			}
+			.info{
+				text-align: center;
+			}
+			.node circle {
+			  fill: #fff;
+			  stroke: #A9A9A9;
+			  stroke-width: 1.5px;
+			}
+			.node text {
+			  font-size: 10px;
+			  font-weight: bold;
+			}
+			.link {
+			  fill: none;
+			  stroke: #A9A9A9;
+			  stroke-width: 1.5px;
+            } */
+            
+			</style>
+	</head>
+	<body id="responsive" class="container">
+        <h1>Comparing Most Popular NYC and National Baby Names</h1>
+        <div id = "info">
+            <p> Enjoy our interactive visualizations regarding most popular baby names in New York City
+                            from 2011 to 2014. Explore our visualizations and observe how popular NYC baby names compare to national baby names.
+                            The City of New York published the dataset, which included the year of birth,
+                            gender of baby, race of mother, and name popularity by count and rank (the name's popularity relative
+                            to the other names on the list. 
+            </p>
+        </div>
+        <div class = "container">
+        <p> Select a year to view the most popular baby names based on demographic information.</p>
+        <select id="yearlist" onchange = "dataChange()" class="selectpicker" data-style="btn-info">
+            <option value="twentyeleven" selected = "selected">2011</option>
+            <option value="twentytwelve">2012</option>
+            <option value="twentythirteen">2013</option>
+            <option value="twentyfourteen">2014</option>
+        </select>
+            <!-- <script src="treemap.js"></script> -->
+        </div> 
+        <h1>compare names!</h1>
+        <div class="container">
+            <svg width="1000" height="600"></svg>
+            <script src="linegraph.js"></script>
+        </div>
+	</body>
+</html>
+
+
+

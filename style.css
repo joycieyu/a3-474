@@ -1,0 +1,77 @@
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto; 
+}
+@media (min-width: 768px) {
+		.container { width: 750px; } 
+}
+@media (min-width: 992px) {
+		.container { width: 970px; } 
+}
+@media (min-width: 1200px) {
+		.container { width: 1170px; } 
+}
+
+
+body {
+    font-family: 'Lato', Helvetica Neue, Helvetica, Arial, san-serif;
+		font-size: 18px;
+		font-weight: 300;
+		margin: 10px;
+		box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Raleway', Helvetica Neue, Helvetica, Arial, san-serif;
+	margin-top: 0;
+	padding-top: 1em;
+    font-weight: 100;
+    text-align: center;
+    width: 1500px;
+}
+
+ p {
+	padding-left: 10px;	
+	line-height: 1.43;
+	margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 1300px;
+    size: 10pt;
+}
+.node {
+  cursor: pointer;
+}
+.info{
+    text-align: center;
+}
+.node circle {
+  fill: #fff;
+  stroke: #A9A9A9;
+  stroke-width: 1.5px;
+}
+.node text {
+  font-size: 10px;
+  font-weight: bold;
+}
+.link {
+  fill: none;
+  stroke: #A9A9A9;
+  stroke-width: 1.5px;
+}
+
+.axis--x path {
+    display: none;
+  }
+  
+.line {
+fill: none;
+stroke: steelblue;
+stroke-width: 1.5px;
+}
+
+.legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: left;
