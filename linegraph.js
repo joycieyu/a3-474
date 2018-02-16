@@ -59,7 +59,7 @@ d3.tsv("nameSelection.tsv", function(error, data) {
 
   name.append("path")
       .attr("class", "line")
-      .attr("d", function(d) { return line(d.count); })
+      .attr("d", function(d) { return line(d.values); })
       .style("stroke", function(d) { return z(d.id); });
 
   name.append("text")
@@ -69,13 +69,6 @@ d3.tsv("nameSelection.tsv", function(error, data) {
       .attr("dy", "0.35em")
       .style("font", "10px sans-serif")
       .text(function(d) { return d.id; });
-
-svg.selectAll("dot")
-     .data(data)
-    .enter().append("circle")
-    .attr("r", 4)
-    .attr("cx", function(d) { return x(d.year); })
-    .attr("cy", function(d) { return y(d.count); });
 
 });
 
