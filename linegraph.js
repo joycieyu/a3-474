@@ -1,10 +1,19 @@
 
-var svg = d3.select("svg"),
-    margin = {top: 20, right: 80, bottom: 30, left: 50},
-    width = svg.attr("width") - margin.left - margin.right,
-    height = svg.attr("height") - margin.top - margin.bottom,
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+// var svg = d3.select("svg"),
+//     margin = {top: 20, right: 80, bottom: 30, left: 50},
+//     width = svg.attr("width") - margin.left - margin.right,
+//     height = svg.attr("height") - margin.top - margin.bottom,
+//     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+
+    var svg = d3.select("#graph").append("svg")
+        
+        .attr("width", width + margin.right + margin.left)
+        .attr("height", height + margin.top + margin.bottom),
+        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")"),
+        margin = {top: 20, right: 80, bottom: 30, left: 50};
+
+        
 //var parseTime = d3.timeParse("%Y%m%d");
 
 var x = d3.scaleTime().range([0, width]),
@@ -53,7 +62,7 @@ d3.tsv("nameSelection.tsv", function(error, data) {
       .text("Count");
 
   var name = g.selectAll(".name")
-    .data(data)
+    .data(names)
     .enter().append("g")
       .attr("class", "name");
 

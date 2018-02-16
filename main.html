@@ -28,24 +28,26 @@
         <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#tree">Tree Diagram</a></li>
                 <li><a data-toggle="tab" href="#graph">Compare Names</a></li>
-              </ul>
+        </ul>
         <div class="tab-content">     
-        <div id = "tree" class="tab-pane fade in active">
-            <script src="treemap.js"></script>
-            <select id="yearlist" onchange = "dataChange()" class="selectpicker" data-style="btn-info">
-                <option value="twentyeleven" selected = "selected">2011</option>
-                <option value="twentytwelve">2012</option>
-                <option value="twentythirteen">2013</option>
-                <option value="twentyfourteen">2014</option>
-            </select>
-            <p> Select a year to view the most popular baby names based on demographic information.</p>
-        </div> 
-        <div id = "graph" class="tab-pane fade in active">
-            <h1>compare names!</h1>
-            <svg width="1000" height="600"></svg>
-            <script src="linegraph.js"></script>
-        </div>
-    </div>  
+            <div id = "tree" class="tab-pane fade in active">
+                
+                <select id="yearlist" onchange = "dataChange()" class="selectpicker" data-style="btn-info">
+                    <option value="twentyeleven" selected = "selected">2011</option>
+                    <option value="twentytwelve">2012</option>
+                    <option value="twentythirteen">2013</option>
+                    <option value="twentyfourteen">2014</option>
+                </select>
+                <script src="treemap.js"></script>
+                <p> Select a year to view the most popular baby names based on demographic information.</p>
+            </div> 
+
+            
+            <div id = "graph" class="tab-pane fade in active">
+                <h1>compare names!</h1>
+                <script src="linegraph.js"></script>
+            </div>
+        </div>  
 	</body>
 </html>
 

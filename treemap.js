@@ -751,7 +751,7 @@ width = 960 - margin.left - margin.right,
 height = 500 - margin.top - margin.bottom;
 
 // appends svg
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#tree").append("svg")
 .attr("width", width + margin.right + margin.left)
 .attr("height", height + margin.top + margin.bottom)
 .append("g")
