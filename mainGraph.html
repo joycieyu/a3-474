@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -14,15 +15,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>Baby Names</title>
 	</head>
-	<body id="responsive" class="container">
-        <h1>Comparing Most Popular NYC and National Baby Names</h1>
-                <!-- Tab links -->
-        <!-- <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#tree">Tree Diagram</a></li>
-                <li><a data-toggle="tab" href="#graph">Compare Names</a></li>
-        </ul> -->
+	<body>
      
-        <!-- <div class="tab-content">    -->
+        <div>   
             <div id = "info">
                 <p> Enjoy our interactive visualizations regarding most popular baby names in New York City
                                 from 2011 to 2014. Explore our visualizations and observe how popular NYC baby names compare to national baby names.
@@ -32,28 +27,15 @@
                 </p>
             </div>
 
-        
-              <!-- Tree Diagram  -->
-            <div id = "tree" class="tab-pane fade in active">
-                
-                <select id="yearlist" onchange = "dataChange()" class="selectpicker" data-style="btn-info">
-                    <option value="twentyeleven" selected = "selected">2011</option>
-                    <option value="twentytwelve">2012</option>
-                    <option value="twentythirteen">2013</option>
-                    <option value="twentyfourteen">2014</option>
-                </select>
-                <svg id="zhan" width="960" height="500"></svg>
-                <script src="treemap.js"></script>
-                <p> Select a year to view the most popular baby names based on demographic information.</p>
-            </div> 
-
             <!-- Multi-line graph -->
-            <div id = "graph" class="tab-pane fade in active">
-                <h1>Compare names!</h1>
-                <svg id="joycie" width="960" height="500"></svg>
-                <script src="linegraph.js"></script>
+            <div id ="graph">
+                    <h1>Compare names!</h1>
+                    <script src="linegraph.js"></script>
             </div>
-            
-        <!-- </div>   -->
+
+        </div>  
 	</body>
 </html>
+
+
+

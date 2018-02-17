@@ -751,7 +751,8 @@ width = 960 - margin.left - margin.right,
 height = 500 - margin.top - margin.bottom;
 
 // appends svg
-var svg = d3.select("#tree").append("svg")
+// var svg = d3.select("#tree").append("svg")
+var svg = d3.select("#zhan")
 .attr("width", width + margin.right + margin.left)
 .attr("height", height + margin.top + margin.bottom)
 .append("g")
@@ -800,7 +801,7 @@ function rootWork(root){
 	root.x0 = height / 2;
 	root.y0 = 0;
 
-	// only show first onde at first
+	// only show first node at first
 	root.children.forEach(collapse);
 
 	update(root);

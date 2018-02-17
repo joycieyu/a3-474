@@ -1,19 +1,9 @@
-
-// var svg = d3.select("svg"),
-//     margin = {top: 20, right: 80, bottom: 30, left: 50},
-//     width = svg.attr("width") - margin.left - margin.right,
-//     height = svg.attr("height") - margin.top - margin.bottom,
-//     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-
-    var svg = d3.select("#graph").append("svg")
-        margin = {top: 20, right: 80, bottom: 30, left: 50}
-        width = svg.attr("width") - margin.left - margin.right,
-        height = svg.attr("height") - margin.top - margin.bottom,
-        g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-        
-//var parseTime = d3.timeParse("%Y%m%d");
+// var svg = d3.select("#graph").append("svg"),
+var svg = d3.select("#joycie"),
+    margin = {top: 20, right: 80, bottom: 30, left: 50},
+    width = svg.attr("width") - margin.left - margin.right,
+    height = svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var x = d3.scaleTime().range([0, width]),
     y = d3.scaleLinear().range([height, 0]),
@@ -21,7 +11,7 @@ var x = d3.scaleTime().range([0, width]),
 
 var line = d3.line()
     .curve(d3.curveBasis)
-    .x(function(d) { return x(d.year); })
+    .x(function(d) { return x(d.year.toString()); })
     .y(function(d) { return y(d.count); });
 
 d3.tsv("nameSelection.tsv", function(error, data) {
@@ -31,12 +21,12 @@ d3.tsv("nameSelection.tsv", function(error, data) {
     return {
       id: id,
       values: data.map(function(d) {
-        return {year: d.year, count: d[id]};
+        return {year: d.year.toString(), count: d[id]};
       })
     };
   });
 
-  x.domain(d3.extent(data, function(d) { return d.year; }));
+  x.domain(d3.extent(data, function(d) { return d.year.toString(); }));
 
   y.domain([ 
     d3.min(names, function(c) { return d3.min(c.values, function(d) { return d.count; }); }),
@@ -72,16 +62,10 @@ d3.tsv("nameSelection.tsv", function(error, data) {
 
   name.append("text")
       .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
-      .attr("transform", function(d) { return "translate(" + x(d.value.year) + "," + y(d.value.count) + ")"; })
+      .attr("transform", function(d) { return "translate(" + x(d.value.year.toString()) + "," + y(d.value.count) + ")"; })
       .attr("x", 3)
       .attr("dy", "0.35em")
       .style("font", "10px sans-serif")
       .text(function(d) { return d.id; });
 
 });
-
-// function type(d, _, columns) {
-//   d.year = d.year;
-//   for (var i = 1, n = columns.length, c; i < n; ++i) d[c = columns[i]] = +d[c];
-//   return d;
-// }
