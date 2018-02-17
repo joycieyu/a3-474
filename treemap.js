@@ -220,7 +220,7 @@ var twentyTwelve =
 							"name" : "Ryan",
 							"children": [
 								{"name": "#1 in NYC"},
-								{"name " :"26 Nationally"},
+								{"name " : "26 Nationally"},
 							]	
 					},
 						{"name" : "Ethan",
@@ -746,13 +746,13 @@ var twentyFourteen =
 };
 
 // setting the dimensions
-var margin = {top: 20, right: 90, bottom: 30, left: 90},
+var margin = {top: 20, right: 100, bottom: 30, left: 90},
 width = 960 - margin.left - margin.right,
 height = 500 - margin.top - margin.bottom;
 
 // appends svg
 // var svg = d3.select("#tree").append("svg")
-var svg = d3.select("#zhan")
+var svg2 = d3.select("#zhan")
 .attr("width", width + margin.right + margin.left)
 .attr("height", height + margin.top + margin.bottom)
 .append("g")
@@ -829,7 +829,7 @@ function update(source) {
 
 	// this stops the nodes from refreshing on every click, and only on the selects
 	if (dataJustChanged == 1) {
-		svg.selectAll('.node').remove();
+		svg2.selectAll('.node').remove();
 		svg.selectAll('.node')
 			.data(nodes)
 			.enter()
@@ -839,7 +839,7 @@ function update(source) {
 	}
 		
 	// update
-	var node = svg.selectAll('g.node')
+	var node = svg2.selectAll('g.node')
 	.data(nodes, function(d) {return d.id || (d.id = ++i); });
 
 	// new node
@@ -905,7 +905,7 @@ function update(source) {
 	.style('fill-opacity', 1e-6);
 
 
-	var link = svg.selectAll('path.link')
+	var link = svg2.selectAll('path.link')
 	.data(links, function(d) { return d.id; });
 
 	var linkEnter = link.enter().insert('path', "g")
